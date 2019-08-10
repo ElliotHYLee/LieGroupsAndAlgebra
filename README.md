@@ -17,6 +17,6 @@ skew symmetric matrix (SYM)= <br>
 <img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/skew.PNG" width="200">
 
 Rotation matrix = exp(SYM) =  <br>
-<img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/expSO3.PNG" width="200">
+<img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/expSO3.PNG" width="400">
 ### Logarithmic Mapping
 The inverse mapping of exponential mapping. The log maps the rotation matrix to 3D vector.
