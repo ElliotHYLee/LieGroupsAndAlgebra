@@ -14,7 +14,7 @@ Quick and intuitively, the rotation matrix is nonlinear. As R is in nonlinear sp
 The 3D vector needs to be mapped as a matrix. The mapping from 3D vector to the rotation matrix is exponential mapping.
 
 wx = 
-<img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/skew.png" width="400">
+<img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/skew.PNG" width="400">
 
 ### Logarithmic Mapping
 The inverse mapping of exponential mapping. The log maps the rotation matrix to 3D vector.
