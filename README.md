@@ -21,3 +21,7 @@ Rotation matrix = exp(SYM) =  <br>
 ### Logarithmic Mapping
 The inverse mapping of exponential mapping. The log maps the rotation matrix to 3D vector.
 <img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/logSO3.PNG" width="600">
+
+
+
+\zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s}
