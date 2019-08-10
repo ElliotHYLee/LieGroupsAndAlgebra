@@ -20,3 +20,4 @@ Rotation matrix = exp(SYM) =  <br>
 <img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/expSO3.PNG" width="600">
 ### Logarithmic Mapping
 The inverse mapping of exponential mapping. The log maps the rotation matrix to 3D vector.
+<img src="https://github.com/ElliotHYLee/LieGroupsAndAlgebra/blob/master/Images/logSO3.PNG" width="600">
