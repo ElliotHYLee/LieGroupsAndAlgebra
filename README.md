@@ -13,6 +13,8 @@ Quick and intuitively, the rotation matrix is nonlinear. As R is in nonlinear sp
 ### Exponential Mapping 
 The 3D vector needs to be mapped as a matrix. The mapping from 3D vector to the rotation matrix is exponential mapping.
 
+wx = 
+
 
 ### Logarithmic Mapping
 The inverse mapping of exponential mapping. The log maps the rotation matrix to 3D vector.
