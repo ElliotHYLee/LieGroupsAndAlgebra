@@ -104,6 +104,23 @@ class SE3():
         u = np.matmul(np.linalg.inv(V), t)
         return w, u
 
+def rotatePoints3D(R, pts):
+    N = pts.shape[0]
+    result = np.zeros_like(pts)
+    for i in range(0, N):
+        result[i] = np.matmul(R, pts[i])
+    return result
+
+
+def transformPoints4D(T, pts3D):
+    N = pts3D.shape[0]
+    pts4D = np.ones((N, 4))
+    pts4D[:,:3] = pts3D
+    result = np.zeros_like(pts4D)
+    for i in range(0, N):
+        result[i] = np.matmul(T, pts4D[i])
+    return result[:,0:3]
+
 if __name__ == '__main__':
     eul = np.array([10, 20, 30])*np.pi/180
     # R = Lie_SO3.eul2rotm(eul)
