@@ -43,4 +43,4 @@ class LieGATest(unittest.TestCase):
     def test_get_exp(self):
         w = np.array([10, -20 , 30])*np.pi/180.0
         dR = SO3.get_exp(w)
-        print(dR)
+#        print(dR)
