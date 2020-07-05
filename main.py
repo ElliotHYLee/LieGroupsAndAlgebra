@@ -4,8 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def KITTI():
-    imgPath = 'D:/DLData/KITTI/odom/dataset/sequences/00/'
-    dataPath = 'D:/DLData/KITTI/odom/dataset/poses/'
+    imgPath = '/mnt/KITTI/odom/dataset/sequences/00/'
+    dataPath = '/mnt/KITTI/odom/dataset/poses/'
     stateData = pd.read_csv(dataPath + '00.txt', sep=' ', header=None).values
     raw = np.reshape(stateData, (stateData.shape[0], 3, 4))
     N = raw.shape[0]
@@ -21,7 +21,7 @@ def main():
     for i in range(1, data.shape[0]):
         T_prev = data[i - 1]
         T_curr = data[i]
-        dT[i-1] = np.matmul(np.linalg.inv(T_prev), T_curr)
+        dT[i-1] = SE3.get_dT(T_prev, T_curr)
         w, u = SE3.get_log(dT[i - 1])
         dT_recon[i-1] = SE3.get_exp(w, u)
 
@@ -34,6 +34,7 @@ def main():
 
     plt.figure()
     plt.plot(pose[:, 0], pose[:, 2], 'r')
+    plt.plot(reconT[:, 0], reconT[:, 2], 'b-.')
 
     # plt.figure()
     # plt.plot(w[:, 0], 'b')

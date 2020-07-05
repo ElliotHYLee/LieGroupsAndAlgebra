@@ -48,6 +48,10 @@ class SO3():
         return dR
 
     @staticmethod
+    def get_dR(R_prev, R_curr):
+        return np.matmul(np.linalg.inv(R_prev), R_curr)
+
+    @staticmethod
     def get_log(R, type='zyx'):
         with warnings.catch_warnings():
             warnings.filterwarnings('error')
@@ -82,7 +86,11 @@ class SE3():
         return V
 
     @staticmethod
-    def get_Rt(T):
+    def get_dT(T_prev, T_curr):
+        return np.matmul(np.linalg.inv(T_prev), T_curr)
+
+    @staticmethod
+    def get_Rnt(T):
         return T[:3, :3], T[:3, 3]
 
     @staticmethod
@@ -97,20 +105,19 @@ class SE3():
 
     @staticmethod
     def get_log(T):
-        R, t = SE3.get_Rt(T)
+        R, t = SE3.get_Rnt(T)
         skew = SO3.get_log(R)
         w = SO3.get_w(skew)
         V = SE3.get_V(w)
         u = np.matmul(np.linalg.inv(V), t)
         return w, u
 
-def rotatePoints3D(R, pts):
-    N = pts.shape[0]
-    result = np.zeros_like(pts)
+def rotatePoints3D(R, pts3):
+    N = pts3.shape[0]
+    result = np.zeros_like(pts3)
     for i in range(0, N):
-        result[i] = np.matmul(R, pts[i])
+        result[i] = np.matmul(R, pts3[i])
     return result
-
 
 def transformPoints4D(T, pts3D):
     N = pts3D.shape[0]
